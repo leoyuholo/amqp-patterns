@@ -1,0 +1,21 @@
+version: '2'
+services:
+  mq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ./docker_volumes/rabbitmq:/var/lib/rabbitmq
+    logging:
+      driver: none
+  dev:
+    build: .
+    environment:
+      - NODE_ENV=development
+    working_dir: /app
+    command: /wait-for-it.sh -t 5 http://mq:15672 -- npm run dev
+    volumes:
+      - .:/app
+    depends_on:
+      - mq
