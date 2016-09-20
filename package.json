@@ -21,10 +21,14 @@
     "coffeelint-newline-at-eof": "^0.4.1",
     "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
-    "nodemon": "^1.10.2"
+    "nodemon": "^1.10.2",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0"
   },
   "dependencies": {
     "amqplib": "^0.4.2",
-    "lodash": "^4.15.0"
+    "async": "^2.0.1",
+    "lodash": "^4.15.0",
+    "node-uuid": "^1.4.7"
   }
 }
